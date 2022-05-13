@@ -11,6 +11,6 @@ namespace UrlShortener.Domain.Model
     {
         Task<long> Add(UrlShortenerHistoryEnity urlShortenerHistory);
         Task<UrlShortenerHistoryEnity> Get(long id);
-        IQueryable<UrlShortenerHistoryEnity> GetAll();
+        Task <List<UrlShortenerHistoryEnity>> GetByFilter(DateTime startDate, DateTime endDate, string shortestUrl);
     }
 }

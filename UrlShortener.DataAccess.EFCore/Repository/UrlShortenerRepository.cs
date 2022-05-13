@@ -44,5 +44,11 @@ namespace UrlShortener.DataAccess.EFCore.Repository
         {
             return _context.UrlShortenerEnity.Where(x => x.IsDelete == false);
         }
+
+        public async Task<UrlShortenerEnity> GetByurlShortenerGUID(string urlShortenerGUID)
+        {
+            return await _context.UrlShortenerEnity
+                .FirstOrDefaultAsync(x => x.UrlShortenerGUID == urlShortenerGUID);
+        }
     }
 }

@@ -12,6 +12,10 @@ namespace UrlShortener.DataAccess.EFCore.Repository
     {
         private readonly UrlShrtenerDbContext _context;
 
+        public UrlShortenerHistoryRepository()
+        {
+        }
+
         public UrlShortenerHistoryRepository(UrlShrtenerDbContext context)
         {
             _context = context;
@@ -29,9 +33,14 @@ namespace UrlShortener.DataAccess.EFCore.Repository
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public IQueryable<UrlShortenerHistoryEnity> GetAll()
+        public async Task<List<UrlShortenerHistoryEnity>> GetByFilter(DateTime startDate, DateTime endDate, string shortestUrl)
         {
-            return _context.UrlShortenerHistoryEnity.Where(x => x.IsDelete == false);
+            return await _context.UrlShortenerHistoryEnity
+                    .Where(x => x.IsDelete == false &&
+                            x.RegisterDate >= startDate &&
+                            x.RegisterDate <= endDate &&
+                            x.UrlShortener.ShortestUrl == shortestUrl)
+                    .ToListAsync();
         }
     }
 }

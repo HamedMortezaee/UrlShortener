@@ -10,6 +10,7 @@ namespace UrlShortener.Domain.Model
     public class UrlShortenerEnity : EventLog
     {
         public long Id { get; set; }
+        public string UrlShortenerGUID { get; private set; }
         public string MainUrl { get; private set; }
         public string ShortestUrl { get; private set; }
 
@@ -17,8 +18,9 @@ namespace UrlShortener.Domain.Model
 
         protected UrlShortenerEnity() { }
 
-        public UrlShortenerEnity(string mainUrl, string shortestUrl)
+        public UrlShortenerEnity(string urlShortenerGUID, string mainUrl, string shortestUrl)
         {
+            UrlShortenerGUID = urlShortenerGUID;
             MainUrl = mainUrl;
             ShortestUrl = shortestUrl;
         }

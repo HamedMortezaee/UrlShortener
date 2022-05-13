@@ -12,6 +12,6 @@ namespace UrlShortener.Domain.Model
         Task<long> Add(UrlShortenerEnity urlShortener);
         Task Edit(UrlShortenerEnity urlShortener);
         Task<UrlShortenerEnity> Get(long id);
-        IQueryable<UrlShortenerEnity> GetAll();
+        Task<UrlShortenerEnity> GetByurlShortenerGUID(string urlShortenerGUID);
     }
 }

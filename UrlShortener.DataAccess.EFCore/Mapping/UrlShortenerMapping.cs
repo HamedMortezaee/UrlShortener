@@ -15,6 +15,7 @@ namespace UrlShortener.DataAccess.EFCore.Mapping
         {
             builder.ToTable("UrlShortener");
             builder.HasKey(a => a.Id);
+            builder.Property(a => a.UrlShortenerGUID).HasMaxLength(128).IsRequired();
             builder.Property(a => a.MainUrl).IsRequired();
             builder.Property(a => a.ShortestUrl).IsRequired();
             builder.Property(a => a.RegisterDate).IsRequired();
