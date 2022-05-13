@@ -7,16 +7,16 @@ using UrlShortener.Domain.Common;
 
 namespace UrlShortener.Domain.Model
 {
-    public class UrlShortenerHistory : EventLog
+    public class UrlShortenerHistoryEnity : EventLog
     {
         public long Id { get; set; }
         public long UrlShortenerId { get; private set; }
 
-        public UrlShortener UrlShortener { get; set; }
+        public UrlShortenerEnity UrlShortener { get; set; }
 
-        protected UrlShortenerHistory() { }
+        protected UrlShortenerHistoryEnity() { }
 
-        public UrlShortenerHistory(long urlShortenerId)
+        public UrlShortenerHistoryEnity(long urlShortenerId)
         {
             UrlShortenerId = urlShortenerId;
         }

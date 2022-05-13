@@ -9,9 +9,8 @@ namespace UrlShortener.Domain.Model
 {
     public interface IUrlShortenerHistoryRepository : IRepository
     {
-        Task<long> Add(UrlShortenerHistory urlShortenerHistory);
-        Task Edit(UrlShortenerHistory urlShortenerHistory);
-        Task<UrlShortenerHistory> Get(long billDetailInfo);
-        IQueryable<UrlShortener> GetAll();
+        Task<long> Add(UrlShortenerHistoryEnity urlShortenerHistory);
+        Task<UrlShortenerHistoryEnity> Get(long id);
+        IQueryable<UrlShortenerHistoryEnity> GetAll();
     }
 }
