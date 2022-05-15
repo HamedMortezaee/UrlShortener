@@ -27,11 +27,5 @@ namespace UrlShortener.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<CreateUrlShortenerHistoryResult>> Post([FromBody] CreateUrlShortenerRequestHistory command)
-        {
-            var result = await mediator.Send(command);
-            return Ok(result);
-        }
     }
 }

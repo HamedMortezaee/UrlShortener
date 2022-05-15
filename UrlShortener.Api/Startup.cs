@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UrlShortener.Application;
 using UrlShortener.Config;
 
 namespace UrlShortener.Api
@@ -23,6 +24,7 @@ namespace UrlShortener.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIOCApplication();
             services.AddIOC(Configuration);
             services.AddControllers();
 
@@ -38,11 +40,18 @@ namespace UrlShortener.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample v1"));
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
             }
 
-            //app.UseDeveloperExceptionPage();
-            app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample v1"));
+            app.UseStaticFiles();
+
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

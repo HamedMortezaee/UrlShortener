@@ -11,7 +11,7 @@ using UrlShortener.Domain.Model;
 
 namespace UrlShortener.DataAccess.EFCore
 {
-    public class UrlShortenerDbContext : DbContext
+    public class UrlShortenerDbContext : DbContext, IUrlShortenerDbContext
     {
         public DbSet<UrlShortenerEnity> UrlShortenerEnity { get; set; }
         public DbSet<UrlShortenerHistoryEnity> UrlShortenerHistoryEnity { get; set; }
@@ -21,9 +21,9 @@ namespace UrlShortener.DataAccess.EFCore
 
         }
 
-        public UrlShortenerDbContext(DbContextOptions options) : base(options)
-        {
-        }
+        //public UrlShortenerDbContext(DbContextOptions options) : base(options)
+        //{
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

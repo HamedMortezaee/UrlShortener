@@ -21,16 +21,18 @@ namespace UrlShortener.Api.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<ActionResult<UrlShortenerItemResultQuery>> GetAll()
+        [HttpGet, Route("/{shortestUrl}")]
+        public async Task<ActionResult<UrlShortenerItemResultQuery>> Get([FromRoute] string shortestUrl)
         {
-            var result = await mediator.Send(new UrlShortenerItemRequestQuery());
+            shortestUrl = shortestUrl.Replace("%2F","/");
+            var urlShortenerItemRequestQuery = new UrlShortenerItemRequestQuery() { UrlShortener = shortestUrl };
+            var result = await mediator.Send(urlShortenerItemRequestQuery);
 
             return base.Ok(result);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] CreateUrlShortener command)
+        public async Task<ActionResult> Post([FromBody] CreateUrlShortenerRequest command)
         {
             var result = await mediator.Send(command);
             return Ok(result);

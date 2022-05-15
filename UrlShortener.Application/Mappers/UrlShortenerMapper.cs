@@ -10,7 +10,7 @@ namespace UrlShortener.Application.Mappers
 {
     public static  class UrlShortenerMapper
     {
-        public static UrlShortenerEnity Map(CreateUrlShortener entity)
+        public static UrlShortenerEnity Map(CreateUrlShortenerRequest entity)
         {
             if (entity == null) return null;
             var ulShortenerGUID = Guid.NewGuid().ToString();

@@ -9,6 +9,6 @@ namespace UrlShortener.Application.Content.UrlShortener.Queries
 {
     public class UrlShortenerItemRequestQuery : IRequest<UrlShortenerItemResultQuery>
     {
-        public string UrlShortenerGUID { get; set; }
+        public string UrlShortener { get; set; }
     }
 }

@@ -18,11 +18,10 @@ namespace UrlShortener.Config
     {
         public static IServiceCollection AddIOC(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMediatR(Assembly.GetExecutingAssembly());
-
             var databaseConnectionString = configuration.GetConnectionString("UrlShortenerApiDB");
 
             services.AddDbContext<UrlShortenerDbContext>(options => options.UseSqlServer(databaseConnectionString));
+            services.AddScoped<IUrlShortenerDbContext>(provider => provider.GetService<UrlShortenerDbContext>());
 
             services.AddTransient<IUrlShortenerRepository, UrlShortenerRepository>();
             services.AddTransient<IUrlShortenerHistoryRepository, UrlShortenerHistoryRepository>();

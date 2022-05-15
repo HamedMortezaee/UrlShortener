@@ -13,5 +13,7 @@ namespace UrlShortener.Domain.Model
         Task Edit(UrlShortenerEnity urlShortener);
         Task<UrlShortenerEnity> Get(long id);
         Task<UrlShortenerEnity> GetByurlShortenerGUID(string urlShortenerGUID);
+        Task<List<UrlShortenerEnity>> GetAll();
+        Task<UrlShortenerEnity> GetByMainUrl(string mainUrl);
     }
 }
