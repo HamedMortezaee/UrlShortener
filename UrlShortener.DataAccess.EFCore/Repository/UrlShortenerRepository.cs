@@ -10,9 +10,9 @@ namespace UrlShortener.DataAccess.EFCore.Repository
 {
     public class UrlShortenerRepository : IUrlShortenerRepository
     {
-        private readonly UrlShrtenerDbContext _context;
+        private readonly UrlShortenerDbContext _context;
 
-        public UrlShortenerRepository(UrlShrtenerDbContext context)
+        public UrlShortenerRepository(UrlShortenerDbContext context)
         {
             _context = context;
         }

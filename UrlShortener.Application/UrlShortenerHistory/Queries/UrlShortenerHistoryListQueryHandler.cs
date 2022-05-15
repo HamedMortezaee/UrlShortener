@@ -9,7 +9,7 @@ using UrlShortener.Domain.Model;
 
 namespace UrlShortener.Application.UrlShortenerHistory.Queries
 {
-    public class UrlShortenerHistoryListQueryHandler : IRequestHandler<UrlShortenerHistoryListQuery, UrlShortenerHistoryListResultQuery>
+    public class UrlShortenerHistoryListQueryHandler : IRequestHandler<UrlShortenerHistoryListRequestQuery, UrlShortenerHistoryListResultQuery>
     {
         private readonly IUrlShortenerHistoryRepository _urlShortenerHistoryRepository;
 
@@ -18,7 +18,7 @@ namespace UrlShortener.Application.UrlShortenerHistory.Queries
             _urlShortenerHistoryRepository = urlShortenerHistoryRepository;
         }
 
-        public async Task<UrlShortenerHistoryListResultQuery> Handle(UrlShortenerHistoryListQuery request, CancellationToken cancellationToken)
+        public async Task<UrlShortenerHistoryListResultQuery> Handle(UrlShortenerHistoryListRequestQuery request, CancellationToken cancellationToken)
         {
             var urlShortenerEnitys =
                 await _urlShortenerHistoryRepository.GetByFilter(request.StartDate, request.EndDate, request.ShortUrl);

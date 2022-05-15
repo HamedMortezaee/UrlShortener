@@ -10,7 +10,7 @@ using UrlShortener.Domain.Model;
 
 namespace UrlShortener.Application.Content.UrlShortenerHistory.Commands.CreateUrlShortenerAccessHistory
 {
-    internal class CreateUrlShortenerHistoryHandler : IRequestHandler<CreateUrlShortenerHistory, CreateUrlShortenerHistoryResult>
+    internal class CreateUrlShortenerHistoryHandler : IRequestHandler<CreateUrlShortenerRequestHistory, CreateUrlShortenerHistoryResult>
     {
         private readonly IUrlShortenerHistoryRepository _urlShortenerHistoryRepository;
 
@@ -19,7 +19,7 @@ namespace UrlShortener.Application.Content.UrlShortenerHistory.Commands.CreateUr
             _urlShortenerHistoryRepository = urlShortenerHistoryRepository;
         }
 
-        public async Task<CreateUrlShortenerHistoryResult> Handle(CreateUrlShortenerHistory request, CancellationToken cancellationToken)
+        public async Task<CreateUrlShortenerHistoryResult> Handle(CreateUrlShortenerRequestHistory request, CancellationToken cancellationToken)
         {
             var urlShortenerHistoryEnity = UrlShortenerHistoryMapper.Map(request);
             var id = await _urlShortenerHistoryRepository.Add(urlShortenerHistoryEnity);

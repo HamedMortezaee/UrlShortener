@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UrlShortener.Application.Content.UrlShortenerHistory.Commands.CreateUrlShortenerAccessHistory
 {
-    public class CreateUrlShortenerHistory : IRequest<CreateUrlShortenerHistoryResult>
+    public class CreateUrlShortenerRequestHistory : IRequest<CreateUrlShortenerHistoryResult>
     {
         public long UrlShortenerId { get; set; }
     }

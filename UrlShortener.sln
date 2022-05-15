@@ -17,15 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{7CDBD5CC-CC29-42F9-83CB-89DA1AB7A564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Application", "UrlShortener.Application\UrlShortener.Application.csproj", "{61530903-50C6-49E9-A5C7-31FEB9717E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlShortener.Application", "UrlShortener.Application\UrlShortener.Application.csproj", "{61530903-50C6-49E9-A5C7-31FEB9717E78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Application.Content", "UrlShortener.Application.Content\UrlShortener.Application.Content.csproj", "{BFC1D5E8-309F-48C7-BF9B-0C76B1E67074}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlShortener.Application.Content", "UrlShortener.Application.Content\UrlShortener.Application.Content.csproj", "{BFC1D5E8-309F-48C7-BF9B-0C76B1E67074}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Domain", "UrlShortener.Domain\UrlShortener.Domain.csproj", "{41AD1A79-5176-4BF1-A46B-8AFF3E5A73CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlShortener.Domain", "UrlShortener.Domain\UrlShortener.Domain.csproj", "{41AD1A79-5176-4BF1-A46B-8AFF3E5A73CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.DataAccess.EFCore", "UrlShortener.DataAccess.EFCore\UrlShortener.DataAccess.EFCore.csproj", "{72C8FEA6-1831-433C-AA3B-12C6FD111131}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlShortener.DataAccess.EFCore", "UrlShortener.DataAccess.EFCore\UrlShortener.DataAccess.EFCore.csproj", "{72C8FEA6-1831-433C-AA3B-12C6FD111131}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Api", "UrlShortener.Api\UrlShortener.Api.csproj", "{959AC05A-DC9E-4693-B353-66FEF7A07E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlShortener.Api", "UrlShortener.Api\UrlShortener.Api.csproj", "{959AC05A-DC9E-4693-B353-66FEF7A07E78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Config", "UrlShortener.Config\UrlShortener.Config.csproj", "{E52D3364-62AF-4741-B612-E47F27847A44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{959AC05A-DC9E-4693-B353-66FEF7A07E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{959AC05A-DC9E-4693-B353-66FEF7A07E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{959AC05A-DC9E-4693-B353-66FEF7A07E78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E52D3364-62AF-4741-B612-E47F27847A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E52D3364-62AF-4741-B612-E47F27847A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E52D3364-62AF-4741-B612-E47F27847A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E52D3364-62AF-4741-B612-E47F27847A44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{41AD1A79-5176-4BF1-A46B-8AFF3E5A73CC} = {6CDF5F52-1CBD-4304-89CA-7AAC40A0931C}
 		{72C8FEA6-1831-433C-AA3B-12C6FD111131} = {F33ADC75-C03B-419E-B2D8-70F5224BC77C}
 		{959AC05A-DC9E-4693-B353-66FEF7A07E78} = {1BBD206C-AA41-4E49-933D-0B883C68A3BC}
+		{E52D3364-62AF-4741-B612-E47F27847A44} = {F33ADC75-C03B-419E-B2D8-70F5224BC77C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51227B81-AC28-42C1-9E16-E428E6BD39CC}

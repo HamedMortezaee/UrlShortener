@@ -10,13 +10,13 @@ namespace UrlShortener.DataAccess.EFCore.Repository
 {
     public class UrlShortenerHistoryRepository : IUrlShortenerHistoryRepository
     {
-        private readonly UrlShrtenerDbContext _context;
+        private readonly UrlShortenerDbContext _context;
 
         public UrlShortenerHistoryRepository()
         {
         }
 
-        public UrlShortenerHistoryRepository(UrlShrtenerDbContext context)
+        public UrlShortenerHistoryRepository(UrlShortenerDbContext context)
         {
             _context = context;
         }

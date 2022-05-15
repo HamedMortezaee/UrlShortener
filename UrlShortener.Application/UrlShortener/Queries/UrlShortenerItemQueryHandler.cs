@@ -9,7 +9,7 @@ using UrlShortener.Domain.Model;
 
 namespace UrlShortener.Application.Content.UrlShortener.Queries
 {
-    public class UrlShortenerItemQueryHandler : IRequestHandler<UrlShortenerItemQuery, UrlShortenerItemResultQuery>
+    public class UrlShortenerItemQueryHandler : IRequestHandler<UrlShortenerItemRequestQuery, UrlShortenerItemResultQuery>
     {
         private readonly IUrlShortenerRepository _urlShortenerRepository;
 
@@ -18,7 +18,7 @@ namespace UrlShortener.Application.Content.UrlShortener.Queries
             _urlShortenerRepository = urlShortenerRepository;
         }
 
-        public async Task<UrlShortenerItemResultQuery> Handle(UrlShortenerItemQuery request, CancellationToken cancellationToken)
+        public async Task<UrlShortenerItemResultQuery> Handle(UrlShortenerItemRequestQuery request, CancellationToken cancellationToken)
         {
             var urlShortenerEnity =
                 await _urlShortenerRepository.GetByurlShortenerGUID(request.UrlShortenerGUID);
