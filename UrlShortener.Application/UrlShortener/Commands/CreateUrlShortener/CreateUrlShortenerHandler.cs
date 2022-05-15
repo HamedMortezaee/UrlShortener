@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UrlShortener.Application.Mappers;
 using UrlShortener.Domain.Model;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace UrlShortener.Application.Content.UrlShortener.Commands.CreateUrlShortener
 {
@@ -21,15 +22,24 @@ namespace UrlShortener.Application.Content.UrlShortener.Commands.CreateUrlShorte
 
         public async Task<CreateUrlShortenerResult> Handle(CreateUrlShortener request, CancellationToken cancellationToken)
         {
-            request.ShortestUrl = "";
+            var code = 123_456_789;
+            request.ShortestUrl = GetUrlChunk(code);
             var urlShortener = UrlShortenerMapper.Map(request);
+            
             var id = await _urlShortenerRepository.Add(urlShortener);
+            
             return new CreateUrlShortenerResult()
             {
                 Id = id,
                 MainUrl = request.MainUrl,
                 ShortestUrl = request.ShortestUrl
             };
+        }
+
+        public string GetUrlChunk(long id)
+        {
+            // Transform the "Id" property on this object into a short piece of text
+            return WebEncoders.Base64UrlEncode(BitConverter.GetBytes(id));
         }
     }
 }
