@@ -21,6 +21,10 @@ namespace UrlShortener.DataAccess.EFCore
 
         }
 
+        public UrlShortenerDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UrlShortenerMapping());
@@ -44,8 +48,6 @@ namespace UrlShortener.DataAccess.EFCore
                         break;
                 }
             }
-
-            return base.SaveChangesAsync(cancellationToken);
 
             return base.SaveChangesAsync(cancellationToken);
         }
