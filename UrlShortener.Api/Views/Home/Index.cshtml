@@ -1,8 +1,73 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+ <script src="~/js/jquery-3.5.1.min.js"></script>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <div class="div-body-input">
+        <div class="div-input">
+            <label>mainUrl</label>
+            <input id="MainUrl" placeholder="please enter mainUrl" />
+        </div>
+        <div class="div-btn-save">
+            <button class="btn-save" onclick="Save()">Save MainUrl</button>
+        </div>
+    </div>
+
+
+
 </div>
+
+<style type="text/css">
+
+    .div-body-input {
+        width: 70%;
+        margin: 0 auto;
+        border: 1px solid #e1dada;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .div-btn- {
+        margin-top: 10px;
+    }
+
+    .btn-save {
+    }
+</style>
+
+<script>
+    function Save(){
+        debugger;
+
+        var CreateUrlShortenerRequest = {
+                MainUrl: $("#MainUrl").val(),
+                ShortestUrl: ""
+            };
+            $.ajax({
+                url: "/api/UrlShortener",
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(CreateUrlShortenerRequest),
+                cache: false,
+                async: true,
+                success: function (data) {
+                    alert('اطلاعات با موفقیت ثبت گردید !');
+                },
+                beforeSend: function () {
+                    
+                },
+                complete: function () {
+                    
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    
+                },
+            });
+    }
+
+</script>

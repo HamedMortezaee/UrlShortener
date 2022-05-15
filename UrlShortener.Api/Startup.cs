@@ -24,6 +24,7 @@ namespace UrlShortener.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
             services.AddIOCApplication();
             services.AddIOC(Configuration);
             services.AddControllers();
@@ -57,9 +58,10 @@ namespace UrlShortener.Api
 
             app.UseAuthorization();
 
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
             });
         }
     }
