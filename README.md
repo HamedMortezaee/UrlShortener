@@ -1,22 +1,21 @@
-# URL Shortener
+# UrlShortener
 
-یک سرویس کوتاه‌کننده لینک مبتنی بر ASP.NET Core که امکان ساخت لینک کوتاه، بازیابی لینک اصلی و مشاهده تاریخچه دسترسی‌ها را فراهم می‌کند.
+A simple URL shortener service.
 
-## فناوری‌ها
+## Features
+- Shorten long URLs
+- Redirect to original URLs
+- Track URL usage statistics
 
-- .NET 5 و ASP.NET Core Web API
-- Entity Framework Core و SQL Server
-- MediatR
-- Swagger
+## Installation
 
-## اجرا
+1. Clone the repository
+2. Install dependencies
+3. Run the application
 
-ابتدا رشته اتصال `UrlShortenerApiDB` را در فایل `UrlShortener.Api/appsettings.json` تنظیم کنید، سپس دستورات زیر را اجرا کنید:
+## Usage
 
-```bash
-dotnet restore
-dotnet ef database update --project UrlShortener.DataAccess.EFCore --startup-project UrlShortener.Api
-dotnet run --project UrlShortener.Api
-```
+Use the API to shorten URLs and retrieve original URLs.
 
-پس از اجرا، برنامه به‌صورت پیش‌فرض روی `http://localhost:5000` در دسترس است.
+## AI Agent Test
+This section was added by the Planner Executor Critic agent.
