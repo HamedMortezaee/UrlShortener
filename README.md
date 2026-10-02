@@ -15,7 +15,7 @@ A simple URL shortener service.
 
 ## Usage
 
-Use the API to shorten URLs and retrieve original URLs.
+Use the web interface or API to shorten URLs and manage them.
 
 ## AI Agent Test
 This section was added by the Planner Executor Critic agent.
