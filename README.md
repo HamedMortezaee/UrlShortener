@@ -1,22 +1,23 @@
 # URL Shortener
 
-یک سرویس کوتاه‌کننده لینک مبتنی بر ASP.NET Core که امکان ساخت لینک کوتاه، بازیابی لینک اصلی و مشاهده تاریخچه دسترسی‌ها را فراهم می‌کند.
+A simple URL shortening service built with Python and Flask.
 
-## فناوری‌ها
+## Features
 
-- .NET 5 و ASP.NET Core Web API
-- Entity Framework Core و SQL Server
-- MediatR
-- Swagger
+- Shorten long URLs
+- Redirect short URLs to original URLs
+- Simple and clean UI
 
-## اجرا
+## Installation
 
-ابتدا رشته اتصال `UrlShortenerApiDB` را در فایل `UrlShortener.Api/appsettings.json` تنظیم کنید، سپس دستورات زیر را اجرا کنید:
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the app: `python app.py`
 
-```bash
-dotnet restore
-dotnet ef database update --project UrlShortener.DataAccess.EFCore --startup-project UrlShortener.Api
-dotnet run --project UrlShortener.Api
-```
+## Usage
 
-پس از اجرا، برنامه به‌صورت پیش‌فرض روی `http://localhost:5000` در دسترس است.
+Open your browser and go to `http://localhost:5000` to use the URL shortener.
+
+## AI Agent Test
+
+This section was added by the Planner Executor Critic agent.
